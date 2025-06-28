@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amenazas Comunes | Ciberseguridad</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Ciberseguridad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="amenazas.html">Amenazas</a></li>
+          <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <h2 class="mb-4">Amenazas Cibernéticas Comunes</h2>
+
+    <div class="row g-4">
+      <!-- Phishing -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Phishing</h5>
+            <p class="card-text">Engaños por correo o mensajes para robar datos personales.</p>
+            <button class="btn btn-outline-primary btn-sm ver-mas" data-amenaza="phishing">Ver más</button>
+            <div class="info-adicional mt-2 text-secondary d-none" id="info-phishing">
+              El phishing consiste en suplantar la identidad de una entidad confiable para obtener datos como contraseñas o cuentas bancarias. 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ransomware -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Ransomware</h5>
+            <p class="card-text">Secuestro de datos con exigencia de pago para liberarlos.</p>
+            <button class="btn btn-outline-primary btn-sm ver-mas" data-amenaza="ransomware">Ver más</button>
+            <div class="info-adicional mt-2 text-secondary d-none" id="info-ransomware">
+              Este tipo de software malicioso bloquea el acceso a los archivos hasta que se pague un rescate, generalmente en criptomonedas.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Malware -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Malware</h5>
+            <p class="card-text">Software diseñado para dañar o infiltrarse en un sistema.</p>
+            <button class="btn btn-outline-primary btn-sm ver-mas" data-amenaza="malware">Ver más</button>
+            <div class="info-adicional mt-2 text-secondary d-none" id="info-malware">
+              Puede tomar la forma de virus, troyanos, spyware y más. Infecta sistemas para robar información o dañarlos.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DDoS -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Ataques DDoS</h5>
+            <p class="card-text">Colapsar un servidor mediante múltiples solicitudes simultáneas.</p>
+            <button class="btn btn-outline-primary btn-sm ver-mas" data-amenaza="ddos">Ver más</button>
+            <div class="info-adicional mt-2 text-secondary d-none" id="info-ddos">
+              Se saturan los recursos de un servidor desde múltiples equipos, haciendo que el sitio sea inaccesible.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acordeón con casos reales -->
+    <h3 class="mt-5">Casos Reales</h3>
+    <div class="accordion" id="casosReales">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="casoUno">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUno">
+            Caso 1: Phishing bancario
+          </button>
+        </h2>
+        <div id="collapseUno" class="accordion-collapse collapse show" data-bs-parent="#casosReales">
+          <div class="accordion-body">
+            En 2023, miles de personas recibieron correos falsos del “Banco Nacional” solicitando actualizar sus datos. El enlace redirigía a una web falsa.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="casoDos">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDos">
+            Caso 2: Ransomware a hospitales
+          </button>
+        </h2>
+        <div id="collapseDos" class="accordion-collapse collapse" data-bs-parent="#casosReales">
+          <div class="accordion-body">
+            Varios hospitales europeos fueron atacados con ransomware, paralizando sistemas de atención médica hasta que se pagaron rescates.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="casoTres">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTres">
+            Caso 3: DDoS a plataformas de juegos
+          </button>
+        </h2>
+        <div id="collapseTres" class="accordion-collapse collapse" data-bs-parent="#casosReales">
+          <div class="accordion-body">
+            Servicios como PlayStation Network y Xbox Live fueron atacados por grupos hackers que los dejaron fuera de línea durante horas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center bg-dark text-white py-3 mt-5">
+    <p>&copy; 2025 Ciberseguridad. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const botones = document.querySelectorAll(".ver-mas");
+
+      botones.forEach((boton) => {
+        boton.addEventListener("click", function () {
+          const tipo = this.getAttribute("data-amenaza");
+          const info = document.getElementById("info-" + tipo);
+          info.classList.toggle("d-none");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #0a192f; /* azul oscuro tecnológico */
+  color: #e0f7fa;
+}
+
+/* Hero / portada */
+.hero {
+  height: 65vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('../img/seguridad-digital.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #00ffff;
+}
+
+/* Imagen destacada */
+.ciberseguridad1 {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+
+/* Secciones */
+main section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #112240;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+}
+
+/* Títulos */
+h2, h3 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #020c1b !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #00ffff !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #e0f7fa !important;
+}
+
+.nav-link.active {
+  color: #00bcd4 !important;
+}
+
+/* Tarjetas interactivas */
+.card-amenaza {
+  background-color: #112240;
+  color: #ffffff;
+  border: none;
+  border-left: 5px solid #00ffff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-amenaza:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2);
+}
+
+/* Formulario */
+form input, form textarea {
+  background-color: #0a192f;
+  color: #ffffff;
+  border: 1px solid #00ffff;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #00bcd4;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0,255,255,0.2);
+}
+
+/* Botones */
+button.btn-primary {
+  background-color: #00bcd4;
+  border: none;
+  transition: background-color 0.3s ease;
+  color: #000;
+}
+
+button.btn-primary:hover {
+  background-color: #00ffff;
+  color: #000;
+}
+
+button.btn-success {
+  background-color: #00ff88;
+  border: none;
+  color: #000;
+}
+
+button.btn-success:hover {
+  background-color: #00e676;
+}
+
+/* Mensajes de validación */
+.alert-success {
+  background-color: #004d40;
+  color: #00ff88;
+}
+
+.alert-warning {
+  background-color: #ff6f00;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  background-color: #020c1b;
+  color: #cccccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}

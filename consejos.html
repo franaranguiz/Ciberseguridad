@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consejos de Seguridad | Ciberseguridad</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Ciberseguridad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="amenazas.html">Amenazas</a></li>
+          <li class="nav-item"><a class="nav-link active" href="consejos.html">Consejos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Consejos -->
+  <main class="container py-5">
+    <h2>Consejos para Mantenerte Seguro en Línea</h2>
+    <ul class="list-group my-4">
+      <li class="list-group-item">Usa contraseñas seguras y cámbialas periódicamente.</li>
+      <li class="list-group-item">Activa la autenticación en dos pasos (2FA) siempre que sea posible.</li>
+      <li class="list-group-item">No compartas información personal por redes sociales.</li>
+      <li class="list-group-item">Evita abrir enlaces sospechosos o archivos desconocidos.</li>
+      <li class="list-group-item">Mantén tu software y antivirus siempre actualizados.</li>
+    </ul>
+
+    <!-- Formulario de contacto -->
+    <h3>¿Tienes dudas? Contáctanos</h3>
+    <form id="contactoForm" class="my-4">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="correo" required>
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+    <div id="formAlert" class="alert alert-info d-none">¡Gracias por contactarnos!</div>
+
+    <!-- Botón para abrir el test -->
+    <div class="text-center mb-5">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTest">Realizar Test de Seguridad</button>
+    </div>
+  </main>
+
+  <!-- Modal del Test -->
+  <div class="modal fade" id="modalTest" tabindex="-1" aria-labelledby="modalTestLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTestLabel">Test de Seguridad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="testSeguridad">
+            <div class="mb-3">
+              <label>¿Cuál es una contraseña segura?</label><br>
+              <input type="radio" name="pregunta1" value="a"> 123456<br>
+              <input type="radio" name="pregunta1" value="b"> MiNombre2023<br>
+              <input type="radio" name="pregunta1" value="c"> S%tR0ng_P@ssw0rd! ✔️
+            </div>
+            <div class="mb-3">
+              <label>¿Qué deberías hacer si recibes un correo sospechoso?</label><br>
+              <input type="radio" name="pregunta2" value="a"> Hacer clic en el enlace<br>
+              <input type="radio" name="pregunta2" value="b"> Responder para verificar<br>
+              <input type="radio" name="pregunta2" value="c"> Ignorarlo o reportarlo ✔️
+            </div>
+            <button type="submit" class="btn btn-primary">Ver resultados</button>
+          </form>
+          <div id="resultadoTest" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center bg-dark text-white py-3 mt-5">
+    <p>&copy; 2025 Ciberseguridad. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Validación del formulario
+    document.getElementById("contactoForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const mensaje = document.getElementById("mensaje").value;
+
+      if (nombre && correo && mensaje) {
+        document.getElementById("formAlert").classList.remove("d-none");
+        this.reset();
+      }
+    });
+
+    // Test de seguridad
+    document.getElementById("testSeguridad").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const p1 = document.querySelector('input[name="pregunta1"]:checked');
+      const p2 = document.querySelector('input[name="pregunta2"]:checked');
+      let correctas = 0;
+
+      if (p1 && p1.value === "c") correctas++;
+      if (p2 && p2.value === "c") correctas++;
+
+      const resultado = document.getElementById("resultadoTest");
+      resultado.innerHTML = `<div class="alert alert-${correctas === 2 ? 'success' : 'warning'}">
+        Respuestas correctas: ${correctas}/2
+        </div>`;
+    });
+  </script>
+</body>
+</html>
